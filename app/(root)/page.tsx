@@ -10,7 +10,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
     views: 55,
     author : {_id: 1, name: "parvaj"},
     _id: 1,
-    description: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6W5hk6G2szXKUvQrGYSxkhyGbNwAbVVMKpA&s",
+    description: "This is description",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6W5hk6G2szXKUvQrGYSxkhyGbNwAbVVMKpA&s",
     category: "Robots",
     title: "We RObot"
   }]
