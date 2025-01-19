@@ -2,14 +2,13 @@ import StartupCard from "@/components/StartupCard";
 import SearchForm from "../../components/SearchForm";
 import { client } from "@/sanity/lib/client";
 import { STURTUPS_QUERY } from "@/sanity/lib/queries";
+import { StartupTypeCard } from "@/components/StartupCard";
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }> }) {
 
   const query = (await searchParams).query;
 
   const posts = await client.fetch(STURTUPS_QUERY);
-  
-  console.log(JSON.stringify(posts, null, 2))
 
   // const posts = [{
   //   _createdAt : new Date(),
@@ -46,7 +45,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
         <ul className="card_grid mt-7">
             {
               posts?.length > 0 ?( 
-                posts.map((post :StartupCardType)=>(
+                posts.map((post :StartupTypeCard)=>(
                   <StartupCard key={post?._id} post={post}></StartupCard>
                 ))
               ):(
