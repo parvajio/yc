@@ -9,8 +9,10 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
 
   const query = (await searchParams).query;
 
+  const params = {search: query || null}
+
   // const posts = await client.fetch(STURTUPS_QUERY);
-  const {data : posts} = await sanityFetch({query: STURTUPS_QUERY});
+  const {data : posts} = await sanityFetch({query: STURTUPS_QUERY, params});
 
   // const posts = [{
   //   _createdAt : new Date(),
