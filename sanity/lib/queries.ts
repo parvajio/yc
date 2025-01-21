@@ -11,3 +11,13 @@ export const STURTUPS_QUERY = defineQuery(`*[_type == 'startup' && defined(slug.
     _createdAt
 }
 `)
+
+export const STURTUPS_BY_ID_QUERY = defineQuery(`*[_type == 'startup' && _id== $id][0]{
+  _id, title, description, image, 
+    author -> {
+      _id, name,usename, image, bio
+    }, 
+    categoty, views, 
+    _createdAt, pitch
+}
+`)
